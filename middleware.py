@@ -11,8 +11,11 @@ import time
 import logging
 from logging.handlers import RotatingFileHandler
 
-# Add src directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# 👉 Construir la ruta absoluta al subdirectorio donde está 'core/detector.py'
+SERVICE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'external', 'weapon-detection-service', 'weapon-detection-service'))
+sys.path.insert(0, SERVICE_PATH)
+
+# 👉 Ahora puedes importar la clase desde el submódulo
 from core.detector import WeaponDetector
 
 # Configurar logging de Flask
