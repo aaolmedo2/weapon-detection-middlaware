@@ -1,0 +1,8 @@
+{
+    "uri": "mongodb+srv://ariel:tesis2025.@weapon-detection-cluste.4pa58gp.mongodb.net/?retryWrites=true&w=majority",
+    "database": "visionsafe",
+    "collections": {
+        "detections": "detections",
+        "cameras": "cameras"
+    }
+} 

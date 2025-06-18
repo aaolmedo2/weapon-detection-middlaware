@@ -108,3 +108,63 @@ Dashboard ADMIN.
 - Envía la alerta al frontend a través de WebSocket.
 - Visualizacion en el frontend
 - El frontend recibe los datos en tiempo real y actualiza la interfaz (notificaciones, streams, dashboard).
+
+Claro, Inge. El **paso 6** se refiere a cómo **actualizar el submódulo** en tu proyecto principal cuando se han hecho cambios en el repositorio del submódulo (por ejemplo, si tú o alguien más subió una nueva versión del `WeaponDetector` al repo `weapon-detection-service`).
+
+---
+
+## ✅ Paso a paso para actualizar el submódulo
+
+Estás en el **repositorio principal** (el middleware), que tiene el submódulo en `weapon-detection-service/`.
+
+### 🔁 1. Entrar al submódulo y actualizar
+
+```bash
+cd weapon-detection-service
+git checkout main      # o la rama que estés usando
+git pull origin main   # trae los últimos cambios del submódulo
+```
+
+Esto actualizará el contenido del submódulo localmente.
+
+---
+
+### 🔄 2. Volver al repositorio principal y registrar el cambio
+
+El submódulo es como un **puntero a un commit específico** del otro repo. Entonces ahora que lo actualizaste, debes **decirle al repo principal que quieres usar ese nuevo commit del submódulo**:
+
+```bash
+cd ..
+git add weapon-detection-service
+git commit -m "Update submodule to latest commit"
+```
+
+---
+
+### ☁️ 3. Subir los cambios al repositorio principal
+
+```bash
+git push origin main
+```
+
+Ahora el repositorio principal sabrá que debe usar la nueva versión del submódulo.
+
+---
+
+## 🧠 ¿Y si alguien clona mi proyecto después?
+
+Para que el submódulo también se descargue correctamente:
+
+```bash
+git clone --recurse-submodules <URL-del-repo-principal>
+```
+
+O, si ya clonaron sin submódulos:
+
+```bash
+git submodule update --init --recursive
+```
+
+---
+
+¿Quieres que te dé un script de bash que automatice esos pasos por ti (`pull`, `add`, `commit`, `push`)?
