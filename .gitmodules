@@ -1,0 +1,3 @@
+[submodule "weapon-detection-service"]
+	path = weapon-detection-service
+	url = https://github.com/aaolmedo2/weapon-detection-service.git
