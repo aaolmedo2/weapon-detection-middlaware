@@ -61,7 +61,33 @@ Technologies
 
 MongoDB.
 
-Estructura de Datos
+Estructura de Datos cameras
+```bash
+{
+_id: 682149b13508d66af193274a
+id: "1753619715"
+name: "Ariel Narvaez"
+url: "http://192.168.100.2:4747/video"
+status: "inactive"
+}
+```
+
+Estructura de Datos detections
+```bash
+{
+
+_id: 682160fd3508d66af1932759
+tipoArma: "arma"
+porcentaje: 0.8457035422325134
+camara: "CAM1753619715"
+timestamp: 2025-05-11T21:46:21.000+00:00
+imagen_path: "detection_20250511_214621.jpg"
+created_at: 2025-05-12T02:46:21.034+00:00
+}
+```
+
+
+
 ```bash
 {
 "alert_id": "unique_id",
